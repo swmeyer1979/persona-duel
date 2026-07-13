@@ -14,10 +14,6 @@
       "family": "openai",
       "self_family": false
     },
-    "gem": {
-      "family": "google",
-      "self_family": false
-    },
     "composer": {
       "family": "cursor",
       "self_family": false

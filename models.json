@@ -39,7 +39,7 @@
     }
   },
   "judges": {
-    "_routing": "Registry order = auto-pick preference. judge.py refuses judge family == entrant family (self-judging blocked, no bypass).",
+    "_routing": "Registry order = auto-pick preference. judge.py refuses judge family == entrant family (self-judging blocked, no bypass). Gemini judge removed 2026-07-13 (Cursor Ultra usage cap, Sam's call); judge pool = claude, gpt, grok, composer.",
     "claude": {
       "family": "anthropic",
       "cmd": ["claude", "-p", "--model", "claude-fable-5", "--setting-sources", "", "--system-prompt", "You are a precise rating engine. You output only valid JSON.", "{prompt}"]
@@ -48,11 +48,6 @@
       "family": "openai",
       "cmd": ["/Users/sam/persona-duel/work/codex-clean.sh", "exec", "--cd", "{workdir}", "--skip-git-repo-check", "-m", "gpt-5.6-sol", "-o", "{workdir}/judge-out.txt", "{prompt}"],
       "stdout_file": "{workdir}/judge-out.txt"
-    },
-    "gem": {
-      "family": "google",
-      "cmd": ["/Users/sam/.local/bin/cursor-agent", "-p", "--trust", "--mode", "ask", "--model", "gemini-3.1-pro", "{prompt}"],
-      "workdir": "/private/tmp/persona-duel-cursor/judge-gem"
     },
     "grok": {
       "family": "xai",

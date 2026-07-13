@@ -110,7 +110,7 @@ def pick_judges(registry, model_family, primary, secondary):
     never scores its own model family. No bypass. `--judge NAME` narrows to
     one judge (still cross-family enforced) for cheap runs."""
     reg = {k: v for k, v in registry["judges"].items()
-           if not k.startswith("_")}
+           if not k.startswith("_") and not v.get("unavailable")}
     if primary == "panel":
         judges = {j: cfg for j, cfg in reg.items()
                   if cfg["family"] != model_family}
@@ -130,20 +130,32 @@ def pick_judges(registry, model_family, primary, secondary):
     return judges
 
 
-def run_judge(judge_cfg, prompt, timeout, workdir):
+def _run_once(judge_cfg, prompt, timeout, workdir):
     cmd = [a.replace("{prompt}", prompt).replace("{workdir}", str(workdir))
            for a in judge_cfg["cmd"]]
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout,
-                       stdin=subprocess.DEVNULL)
+                       cwd=workdir, stdin=subprocess.DEVNULL)
     out = r.stdout
     if "stdout_file" in judge_cfg:
         f = Path(judge_cfg["stdout_file"].replace("{workdir}", str(workdir)))
         if f.exists():
             out = f.read_text()
             f.unlink()
+    return out, r.stderr
+
+
+def run_judge(judge_cfg, prompt, timeout, workdir):
+    out, err = _run_once(judge_cfg, prompt, timeout, workdir)
     m = re.search(r'\{[^{}]*"score"[^{}]*\}', out, re.DOTALL)
     if not m:
-        return None, f"no json in output: {out[:200]!r}"
+        # one retry: empty/garbled output is usually a transient CLI failure
+        # (e.g. cursor MCP overload). prep_judge_workdir handles the common
+        # cause; this catches the rest.
+        out, err = _run_once(judge_cfg, prompt, timeout, workdir)
+        m = re.search(r'\{[^{}]*"score"[^{}]*\}', out, re.DOTALL)
+    if not m:
+        tail = (out or err)[:200]
+        return None, f"no json in output: {tail!r}"
     try:
         obj = json.loads(m.group(0))
         score = int(obj["score"])
@@ -188,6 +200,17 @@ def main():
               f"{', '.join(judges)}")
     judge_workdir = ROOT / "work" / "judge"
     judge_workdir.mkdir(parents=True, exist_ok=True)
+    # Cursor judges hard-fail (empty output) if their workdir still has the
+    # user's MCP servers enabled. Prep every cursor judge dir before scoring.
+    # Root cause of the 2026-07-13 "Gemini+Grok judged nothing" defect.
+    prep = ROOT / "work" / "cursor-prep.sh"
+    for jname, jcfg in judges.items():
+        if any("cursor-agent" in a for a in jcfg["cmd"]) and "workdir" in jcfg:
+            wd = jcfg["workdir"]
+            Path(wd).mkdir(parents=True, exist_ok=True)
+            subprocess.run([str(prep), wd], capture_output=True,
+                           stdin=subprocess.DEVNULL)
+            print(f"prepped cursor judge {jname} ({wd})")
 
     cache_path = ROOT / "scores" / f"{args.model}.judgecache.jsonl"
     cache_path.parent.mkdir(exist_ok=True)
