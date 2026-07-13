@@ -112,7 +112,6 @@ Run the probe per entrant. Read the output. Config flags are not evidence.
 | `models.json` | entrant + judge registry, neutralization per CLI |
 | `collect.py` / `judge.py` / `report.py` | pipeline |
 | `scores/*.json` | per-model results incl. per-judge breakdowns |
-| `responses/*/raw.jsonl` | raw battery responses (replication) |
 
 ## License
 
