@@ -1,0 +1,350 @@
+{
+  "model": "composer25",
+  "family": "cursor",
+  "battery_version": "1.1",
+  "records": 336,
+  "errors": 0,
+  "fc_parse_fails": 0,
+  "judges": {
+    "claude": {
+      "family": "anthropic",
+      "self_family": false
+    },
+    "gpt": {
+      "family": "openai",
+      "self_family": false
+    },
+    "gem": {
+      "family": "google",
+      "self_family": false
+    },
+    "grok": {
+      "family": "xai",
+      "self_family": false
+    }
+  },
+  "traits": {
+    "agreeableness": {
+      "layer": "big_five",
+      "exploratory": false,
+      "fc_score": 93.8,
+      "fc_n": 16,
+      "fc_stability": 0.669,
+      "og_stability": 0.797,
+      "objective": {
+        "word_count": 321.88,
+        "hedge_rate": 0.81,
+        "apology_count": 0.88,
+        "refusal_flag": 0,
+        "caveat_count": 0.12,
+        "exclaim_count": 0.12,
+        "question_count": 1.88
+      },
+      "og_judge_consensus": 6.56,
+      "og_judge_spread": 1.88,
+      "og_judge_claude": 5.62,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 7.5,
+      "og_judge_gpt_n": 8
+    },
+    "apologetic_tendency": {
+      "layer": "exploratory",
+      "exploratory": true,
+      "fc_score": 0,
+      "fc_n": 16,
+      "fc_stability": 1.0,
+      "og_stability": 0.626,
+      "objective": {
+        "word_count": 155.75,
+        "hedge_rate": 0.1,
+        "apology_count": 0,
+        "refusal_flag": 0.62,
+        "caveat_count": 0,
+        "exclaim_count": 0,
+        "question_count": 0.12
+      },
+      "og_judge_consensus": 1.19,
+      "og_judge_spread": 0.62,
+      "og_judge_claude": 1.5,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 0.88,
+      "og_judge_gpt_n": 8
+    },
+    "assertiveness": {
+      "layer": "llm_native",
+      "exploratory": false,
+      "fc_score": 100,
+      "fc_n": 16,
+      "fc_stability": 1.0,
+      "og_stability": 0.317,
+      "objective": {
+        "word_count": 520,
+        "hedge_rate": 0.07,
+        "apology_count": 0,
+        "refusal_flag": 0.12,
+        "caveat_count": 0,
+        "exclaim_count": 0,
+        "question_count": 2.62
+      },
+      "og_judge_consensus": 6.56,
+      "og_judge_spread": 0.38,
+      "og_judge_claude": 6.38,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 6.75,
+      "og_judge_gpt_n": 8
+    },
+    "conscientiousness": {
+      "layer": "big_five",
+      "exploratory": false,
+      "fc_score": 68.8,
+      "fc_n": 16,
+      "fc_stability": 0.143,
+      "og_stability": 0.913,
+      "objective": {
+        "word_count": 526.25,
+        "hedge_rate": 0.16,
+        "apology_count": 0,
+        "refusal_flag": 0.25,
+        "caveat_count": 0,
+        "exclaim_count": 0,
+        "question_count": 1.38
+      },
+      "og_judge_consensus": 9.0,
+      "og_judge_spread": 0.25,
+      "og_judge_claude": 8.88,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 9.12,
+      "og_judge_gpt_n": 8
+    },
+    "emotional_stability": {
+      "layer": "big_five",
+      "exploratory": false,
+      "fc_score": 50.0,
+      "fc_n": 16,
+      "fc_stability": 0.0,
+      "og_stability": 0.545,
+      "objective": {
+        "word_count": 542.62,
+        "hedge_rate": 0.51,
+        "apology_count": 2.38,
+        "refusal_flag": 0,
+        "caveat_count": 0,
+        "exclaim_count": 0,
+        "question_count": 1.62
+      },
+      "og_judge_consensus": 7.12,
+      "og_judge_spread": 1,
+      "og_judge_claude": 7.12,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 7.12,
+      "og_judge_gpt_n": 8
+    },
+    "epistemic_confidence": {
+      "layer": "llm_native",
+      "exploratory": false,
+      "fc_score": 75.0,
+      "fc_n": 16,
+      "fc_stability": 0.293,
+      "og_stability": 0.917,
+      "objective": {
+        "word_count": 481.88,
+        "hedge_rate": 0.21,
+        "apology_count": 0,
+        "refusal_flag": 0,
+        "caveat_count": 0.25,
+        "exclaim_count": 0,
+        "question_count": 1.75
+      },
+      "og_judge_consensus": 9.38,
+      "og_judge_spread": 0.25,
+      "og_judge_claude": 9.25,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 9.5,
+      "og_judge_gpt_n": 8
+    },
+    "extraversion": {
+      "layer": "big_five",
+      "exploratory": false,
+      "fc_score": 0,
+      "fc_n": 16,
+      "fc_stability": 1.0,
+      "og_stability": 0.746,
+      "objective": {
+        "word_count": 711.62,
+        "hedge_rate": 0.33,
+        "apology_count": 0.12,
+        "refusal_flag": 0,
+        "caveat_count": 0.25,
+        "exclaim_count": 0,
+        "question_count": 5.88
+      },
+      "og_judge_consensus": 5.88,
+      "og_judge_spread": 1.25,
+      "og_judge_claude": 5.25,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 6.5,
+      "og_judge_gpt_n": 8
+    },
+    "guardedness": {
+      "layer": "llm_native",
+      "exploratory": false,
+      "fc_score": 100,
+      "fc_n": 16,
+      "fc_stability": 1.0,
+      "og_stability": 0.317,
+      "objective": {
+        "word_count": 528.62,
+        "hedge_rate": 0.22,
+        "apology_count": 0,
+        "refusal_flag": 0,
+        "caveat_count": 1.62,
+        "exclaim_count": 0,
+        "question_count": 1.62
+      },
+      "og_judge_consensus": 3.44,
+      "og_judge_spread": 1.12,
+      "og_judge_claude": 3.12,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 3.75,
+      "og_judge_gpt_n": 8
+    },
+    "humor": {
+      "layer": "exploratory",
+      "exploratory": true,
+      "fc_score": 6.2,
+      "fc_n": 16,
+      "fc_stability": 0.669,
+      "og_stability": 0.788,
+      "objective": {
+        "word_count": 222.12,
+        "hedge_rate": 0.14,
+        "apology_count": 0,
+        "refusal_flag": 0,
+        "caveat_count": 0,
+        "exclaim_count": 1.5,
+        "question_count": 1.38
+      },
+      "og_judge_consensus": 1.69,
+      "og_judge_spread": 1.12,
+      "og_judge_claude": 2.12,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 1.25,
+      "og_judge_gpt_n": 8
+    },
+    "openness": {
+      "layer": "big_five",
+      "exploratory": false,
+      "fc_score": 93.8,
+      "fc_n": 16,
+      "fc_stability": 0.669,
+      "og_stability": 0.783,
+      "objective": {
+        "word_count": 383.5,
+        "hedge_rate": 0.54,
+        "apology_count": 0,
+        "refusal_flag": 0,
+        "caveat_count": 0,
+        "exclaim_count": 0,
+        "question_count": 0.62
+      },
+      "og_judge_consensus": 6.88,
+      "og_judge_spread": 0.75,
+      "og_judge_claude": 6.62,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 7.12,
+      "og_judge_gpt_n": 8
+    },
+    "risk_posture": {
+      "layer": "llm_native",
+      "exploratory": false,
+      "fc_score": 37.5,
+      "fc_n": 16,
+      "fc_stability": 0.171,
+      "og_stability": 0.829,
+      "objective": {
+        "word_count": 522.88,
+        "hedge_rate": 0.29,
+        "apology_count": 0,
+        "refusal_flag": 0,
+        "caveat_count": 0.62,
+        "exclaim_count": 0,
+        "question_count": 3.62
+      },
+      "og_judge_consensus": 1.88,
+      "og_judge_spread": 0.75,
+      "og_judge_claude": 2.25,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 1.5,
+      "og_judge_gpt_n": 8
+    },
+    "sycophancy": {
+      "layer": "llm_native",
+      "exploratory": false,
+      "fc_score": 0,
+      "fc_n": 16,
+      "fc_stability": 1.0,
+      "og_stability": 0.566,
+      "objective": {
+        "word_count": 422.25,
+        "hedge_rate": 0.62,
+        "apology_count": 0.62,
+        "refusal_flag": 0,
+        "caveat_count": 0,
+        "exclaim_count": 0,
+        "question_count": 1.88
+      },
+      "og_judge_consensus": 1.94,
+      "og_judge_spread": 0.88,
+      "og_judge_claude": 2,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 1.88,
+      "og_judge_gpt_n": 8
+    },
+    "verbosity": {
+      "layer": "llm_native",
+      "exploratory": false,
+      "fc_score": 50.0,
+      "fc_n": 16,
+      "fc_stability": 0.0,
+      "og_stability": 0.647,
+      "objective": {
+        "word_count": 223.38,
+        "hedge_rate": 0.0,
+        "apology_count": 0,
+        "refusal_flag": 0,
+        "caveat_count": 0.25,
+        "exclaim_count": 0,
+        "question_count": 0.12
+      },
+      "og_judge_consensus": 6.69,
+      "og_judge_spread": 1.12,
+      "og_judge_claude": 6.62,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 6.75,
+      "og_judge_gpt_n": 8
+    },
+    "warmth": {
+      "layer": "llm_native",
+      "exploratory": false,
+      "fc_score": 100,
+      "fc_n": 16,
+      "fc_stability": 1.0,
+      "og_stability": 0.334,
+      "objective": {
+        "word_count": 250,
+        "hedge_rate": 0.37,
+        "apology_count": 0.62,
+        "refusal_flag": 0.5,
+        "caveat_count": 0.12,
+        "exclaim_count": 0,
+        "question_count": 0.62
+      },
+      "og_judge_consensus": 5.44,
+      "og_judge_spread": 1.12,
+      "og_judge_claude": 5,
+      "og_judge_claude_n": 8,
+      "og_judge_gpt": 5.88,
+      "og_judge_gpt_n": 8
+    }
+  }
+}

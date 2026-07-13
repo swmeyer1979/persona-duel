@@ -1,0 +1,68 @@
+{
+  "_notes": "Command templates. Placeholders: {prompt} {system} {workdir}. {workdir} is a per-model empty scratch dir (context neutrality). stdout_file: read response from this file instead of stdout (codex prints event noise on stdout).",
+  "models": {
+    "claude-fable5": {
+      "family": "anthropic",
+      "cmd": ["claude", "-p", "--model", "claude-fable-5", "--setting-sources", "", "--system-prompt", "{system}", "{prompt}"]
+    },
+    "gpt56": {
+      "family": "openai",
+      "cmd": ["/Users/sam/persona-duel/work/codex-clean.sh", "exec", "--cd", "{workdir}", "--skip-git-repo-check", "-m", "gpt-5.6-sol", "-o", "{workdir}/last-message.txt", "{prompt}"],
+      "stdout_file": "{workdir}/last-message.txt",
+      "neutralization_caveat": "codex via clean CODEX_HOME (work/codex-clean.sh): no user AGENTS.md, no memory extensions. project_doc_max_bytes=0 alone was NOT enough (2026-07-11 incident: user instructions + chronicle memories loaded anyway). Base codex harness prompt still not removable."
+    },
+    "grok45": {
+      "family": "xai",
+      "cmd": ["/Users/sam/.local/bin/cursor-agent", "-p", "--trust", "--mode", "ask", "--model", "grok-4.5-high", "{prompt}"],
+      "workdir": "/private/tmp/persona-duel-cursor/grok45",
+      "harness": "cursor",
+      "neutralization_caveat": "Cursor agent harness; no system-prompt override. Workdir MUST be outside ~ (Cursor walks ancestors for personal agent config (CLAUDE.md/AGENTS.md/persona files)) and MCP-disabled via work/cursor-prep.sh. Residual: skill path listing, username, date."
+    },
+    "gemini-pro": {
+      "family": "google",
+      "cmd": ["/Users/sam/.local/bin/cursor-agent", "-p", "--trust", "--mode", "ask", "--model", "gemini-3.1-pro", "{prompt}"],
+      "workdir": "/private/tmp/persona-duel-cursor/gemini-pro",
+      "harness": "cursor",
+      "neutralization_caveat": "Same as grok45: Cursor harness, tmp workdir + cursor-prep.sh mandatory."
+    },
+    "composer25": {
+      "family": "cursor",
+      "cmd": ["/Users/sam/.local/bin/cursor-agent", "-p", "--trust", "--mode", "ask", "--model", "composer-2.5", "{prompt}"],
+      "workdir": "/private/tmp/persona-duel-cursor/composer25",
+      "harness": "cursor",
+      "neutralization_caveat": "Cursor's own model in Cursor's own harness — the one entrant where model and harness share a vendor. Same guards as grok45."
+    },
+    "stub": {
+      "family": "test",
+      "cmd": ["/Users/sam/persona-duel/work/stubmodel.sh", "{prompt}"],
+      "test_only": true
+    }
+  },
+  "judges": {
+    "_routing": "Registry order = auto-pick preference. judge.py refuses judge family == entrant family (self-judging blocked, no bypass).",
+    "claude": {
+      "family": "anthropic",
+      "cmd": ["claude", "-p", "--model", "claude-fable-5", "--setting-sources", "", "--system-prompt", "You are a precise rating engine. You output only valid JSON.", "{prompt}"]
+    },
+    "gpt": {
+      "family": "openai",
+      "cmd": ["/Users/sam/persona-duel/work/codex-clean.sh", "exec", "--cd", "{workdir}", "--skip-git-repo-check", "-m", "gpt-5.6-sol", "-o", "{workdir}/judge-out.txt", "{prompt}"],
+      "stdout_file": "{workdir}/judge-out.txt"
+    },
+    "gem": {
+      "family": "google",
+      "cmd": ["/Users/sam/.local/bin/cursor-agent", "-p", "--trust", "--mode", "ask", "--model", "gemini-3.1-pro", "{prompt}"],
+      "workdir": "/private/tmp/persona-duel-cursor/judge-gem"
+    },
+    "grok": {
+      "family": "xai",
+      "cmd": ["/Users/sam/.local/bin/cursor-agent", "-p", "--trust", "--mode", "ask", "--model", "grok-4.5-high", "{prompt}"],
+      "workdir": "/private/tmp/persona-duel-cursor/judge-grok"
+    },
+    "composer": {
+      "family": "cursor",
+      "cmd": ["/Users/sam/.local/bin/cursor-agent", "-p", "--trust", "--mode", "ask", "--model", "composer-2.5", "{prompt}"],
+      "workdir": "/private/tmp/persona-duel-cursor/judge-composer"
+    }
+  }
+}

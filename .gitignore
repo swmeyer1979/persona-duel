@@ -1,0 +1,16 @@
+work/*.log
+work/duel-*.log
+work/panel-*.log
+work/rejudge-*.log
+work/recollect-*.log
+work/claude-fable5/
+work/gpt56/
+work/judge/
+work/cursor-test/
+work/__pycache__/
+__pycache__/
+drafts/
+.DS_Store
+responses/
+scores/*.judgecache.jsonl
+archive/
