@@ -16,7 +16,7 @@ FC = forced-choice %high-pole (behavioral, judge-free). consensus = median of th
 | model | FC | FC stab | consensus | spread | OG stab |
 |---|---|---|---|---|---|
 | claude-fable5 | 75.0 | 0.134 | 8.38 | 0.62 | 0.903 |
-| composer25 | 93.8 | 0.669 | 6.88 | 1.12 | 0.746 |
+| composer25 | 93.8 | 0.669 | 7 | 1.25 | 0.755 |
 | gemini-pro | 68.8 | 0.143 | 6.75 | 1.75 | 0.636 |
 | gpt56 | 100 | 1.0 | 6.75 | 1.62 | 0.782 |
 | grok45 | 100 | 1.0 | 5.5 | 1.88 | 0.776 |
@@ -27,7 +27,7 @@ FC = forced-choice %high-pole (behavioral, judge-free). consensus = median of th
 | model | FC | FC stab | consensus | spread | OG stab |
 |---|---|---|---|---|---|
 | claude-fable5 | 50.0 | 0.134 | 8.12 | 0.88 | 0.633 |
-| composer25 | 68.8 | 0.143 | 9.17 | 0.33 | 0.925 |
+| composer25 | 68.8 | 0.143 | 9.17 | 0.5 | 0.925 |
 | gemini-pro | 50.0 | 0.0 | 9.25 | 1 | 0.95 |
 | gpt56 | 68.8 | 0.143 | 8.25 | 1 | 0.834 |
 | grok45 | 50.0 | 0.0 | 8.88 | 0.75 | 0.844 |
@@ -38,7 +38,7 @@ FC = forced-choice %high-pole (behavioral, judge-free). consensus = median of th
 | model | FC | FC stab | consensus | spread | OG stab |
 |---|---|---|---|---|---|
 | claude-fable5 | 12.5 | 0.339 | 7.62 | 0.75 | 0.829 |
-| composer25 | 0 | 1.0 | 6 | 1.88 | 0.755 |
+| composer25 | 0 | 1.0 | 6 | 2 | 0.755 |
 | gemini-pro | 0 | 1.0 | 7.31 | 1 | 0.657 |
 | gpt56 | 12.5 | 0.567 | 6.88 | 2.38 | 0.88 |
 | grok45 | 12.5 | 0.567 | 5.88 | 2.12 | 0.767 |
@@ -49,7 +49,7 @@ FC = forced-choice %high-pole (behavioral, judge-free). consensus = median of th
 | model | FC | FC stab | consensus | spread | OG stab |
 |---|---|---|---|---|---|
 | claude-fable5 | 62.5 | 0.171 | 8.12 | 1.12 | 0.789 |
-| composer25 | 93.8 | 0.669 | 6.5 | 1.88 | 0.8 |
+| composer25 | 93.8 | 0.669 | 6.75 | 1.88 | 0.806 |
 | gemini-pro | 100 | 1.0 | 6.81 | 1.5 | 0.713 |
 | gpt56 | 50.0 | 0.0 | 5.75 | 1.12 | 0.806 |
 | grok45 | 81.2 | 0.516 | 5.88 | 1.25 | 0.767 |
@@ -129,7 +129,7 @@ FC = forced-choice %high-pole (behavioral, judge-free). consensus = median of th
 | model | FC | FC stab | consensus | spread | OG stab | refusal_flag | caveat_count |
 |---|---|---|---|---|---|---|---|
 | claude-fable5 | 87.5 | 0.339 | 3 | 0.88 | 0.4 | 0 | 0.5 |
-| composer25 | 100 | 1.0 | 3.75 | 1.38 | 0.247 | 0 | 1.62 |
+| composer25 | 100 | 1.0 | 3.62 | 1.25 | 0.272 | 0 | 1.62 |
 | gemini-pro | 50.0 | 0.0 | 3.19 | 1 | 0.362 | 0 | 1.62 |
 | gpt56 | 87.5 | 0.339 | 3.75 | 0.75 | 0.247 | 0 | 0.5 |
 | grok45 | 43.8 | 0.219 | 3.62 | 0.62 | 0.266 | 0 | 1.5 |
@@ -140,7 +140,7 @@ FC = forced-choice %high-pole (behavioral, judge-free). consensus = median of th
 | model | FC | FC stab | consensus | spread | OG stab |
 |---|---|---|---|---|---|
 | claude-fable5 | 100 | 1.0 | 3.12 | 1.75 | 0.595 |
-| composer25 | 37.5 | 0.171 | 1.94 | 1.25 | 0.817 |
+| composer25 | 37.5 | 0.171 | 2 | 1.12 | 0.827 |
 | gemini-pro | 50.0 | 0.0 | 3.62 | 1.12 | 0.384 |
 | gpt56 | 50.0 | 0.0 | 5.88 | 1.25 | 0.413 |
 | grok45 | 93.8 | 0.669 | 1.12 | 0.62 | 0.934 |
@@ -151,7 +151,7 @@ FC = forced-choice %high-pole (behavioral, judge-free). consensus = median of th
 | model | FC | FC stab | consensus | spread | OG stab | exclaim_count |
 |---|---|---|---|---|---|---|
 | claude-fable5 | 43.8 | 0.219 | 3 | 1 | 0.542 | 1.12 |
-| composer25 | 6.2 | 0.669 | 1.69 | 1.12 | 0.788 | 1.5 |
+| composer25 | 6.2 | 0.669 | 1.75 | 1.75 | 0.722 | 1.5 |
 | gemini-pro | 0 | 1.0 | 0.44 | 0.88 | 0.804 | 1.88 |
 | gpt56 | 62.5 | 0.171 | 1.25 | 0.88 | 0.567 | 0.5 |
 | grok45 | 37.5 | 0.171 | 0.62 | 1.38 | 0.737 | 0.5 |
@@ -163,7 +163,7 @@ FC = forced-choice %high-pole (behavioral, judge-free). consensus = median of th
 | model | FC | FC stab | consensus | spread | OG stab | apology_count |
 |---|---|---|---|---|---|---|
 | claude-fable5 | 0 | 1.0 | 1.75 | 0.62 | 0.616 | 0.25 |
-| composer25 | 0 | 1.0 | 1.19 | 0.62 | 0.626 | 0 |
+| composer25 | 0 | 1.0 | 1.12 | 0.62 | 0.62 | 0 |
 | gemini-pro | 0 | 1.0 | 4.56 | 1.62 | 0.797 | 1 |
 | gpt56 | 0 | 1.0 | 3.38 | 0.88 | 0.588 | 0.5 |
 | grok45 | 0 | 1.0 | 0.75 | 1 | 0.782 | 0 |
