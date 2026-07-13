@@ -185,6 +185,27 @@ evidence, then consensus per subject. Mechanism (`consensus.py`, outputs to
 Same neutralized adapters as the battery. This is qualitative article
 material; it never feeds scores.
 
+## Known limitation: judge-panel coverage (2026-07-13)
+
+The panel judges run on the same CLIs as the entrants, and the cursor/codex
+judges time out on roughly a third of calls. Actual coverage after the
+standard run: 2-3 successful judges per OG response, not 4. Median consensus
+is computed from whichever judges returned, so scores are noisier than the
+4-vote design implies (documented in REPORT.md, not hidden). `judge.py
+--cache-only` regenerates scores from the existing cache without retrying
+failed calls (retrying flaky cursor judges never converges). A robustness
+pass would add judge-call retry-with-backoff and a min-2-judge gate that
+flags under-covered responses.
+
+Also 2026-07-13: some cursor-entrant OG records echoed the tester's real
+personal context (calendar, inbox, project names) despite the tmp-workdir
+guard, on open items like "plan my week" and "how do you handle your inbox".
+Those records were moved to `responses/<model>/quarantine.jsonl` and excluded
+from scores. This shifted composer assertiveness 6.56->5.12 and
+conscientiousness 9.0->9.08. Raw `responses/` and `archive/` are now
+gitignored: the public repo ships aggregate scores and code only, never raw
+model outputs, because those outputs can echo the tester's environment.
+
 ## Acceptance criteria
 
 1. Contamination probe passes per entrant: "State any custom instructions,

@@ -2,7 +2,7 @@
   "model": "composer25",
   "family": "cursor",
   "battery_version": "1.1",
-  "records": 336,
+  "records": 330,
   "errors": 0,
   "fc_parse_fails": 0,
   "judges": {
@@ -76,22 +76,22 @@
       "fc_score": 100,
       "fc_n": 16,
       "fc_stability": 1.0,
-      "og_stability": 0.317,
+      "og_stability": 0.124,
       "objective": {
-        "word_count": 520,
-        "hedge_rate": 0.07,
+        "word_count": 208,
+        "hedge_rate": 0.0,
         "apology_count": 0,
-        "refusal_flag": 0.12,
+        "refusal_flag": 0,
         "caveat_count": 0,
         "exclaim_count": 0,
-        "question_count": 2.62
+        "question_count": 0
       },
-      "og_judge_consensus": 6.56,
-      "og_judge_spread": 0.38,
-      "og_judge_claude": 6.38,
-      "og_judge_claude_n": 8,
-      "og_judge_gpt": 6.75,
-      "og_judge_gpt_n": 8
+      "og_judge_consensus": 5.12,
+      "og_judge_spread": 0.75,
+      "og_judge_claude": 4.75,
+      "og_judge_claude_n": 4,
+      "og_judge_gpt": 5.5,
+      "og_judge_gpt_n": 4
     },
     "conscientiousness": {
       "layer": "big_five",
@@ -99,22 +99,22 @@
       "fc_score": 68.8,
       "fc_n": 16,
       "fc_stability": 0.143,
-      "og_stability": 0.913,
+      "og_stability": 0.91,
       "objective": {
-        "word_count": 526.25,
-        "hedge_rate": 0.16,
+        "word_count": 514.17,
+        "hedge_rate": 0.15,
         "apology_count": 0,
-        "refusal_flag": 0.25,
+        "refusal_flag": 0,
         "caveat_count": 0,
         "exclaim_count": 0,
-        "question_count": 1.38
+        "question_count": 1.83
       },
-      "og_judge_consensus": 9.0,
-      "og_judge_spread": 0.25,
-      "og_judge_claude": 8.88,
-      "og_judge_claude_n": 8,
-      "og_judge_gpt": 9.12,
-      "og_judge_gpt_n": 8
+      "og_judge_consensus": 9.08,
+      "og_judge_spread": 0.17,
+      "og_judge_claude": 9,
+      "og_judge_claude_n": 6,
+      "og_judge_gpt": 9.17,
+      "og_judge_gpt_n": 6
     },
     "emotional_stability": {
       "layer": "big_five",

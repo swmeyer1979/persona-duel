@@ -5,10 +5,10 @@ FC = forced-choice %high-pole (behavioral, judge-free). consensus = median of th
 | model | records | errors | FC parse fails | judges (self-family flag) |
 |---|---|---|---|---|
 | claude-fable5 | 336 | 0 | 0 | gpt, gem, grok, composer |
-| composer25 | 336 | 0 | 0 | claude, gpt, gem, grok |
-| gemini-pro | 336 | 0 | 0 | claude, gpt, grok, composer |
+| composer25 | 330 | 0 | 0 | claude, gpt, gem, grok |
+| gemini-pro | 332 | 0 | 0 | claude, gpt, grok, composer |
 | gpt56 | 336 | 0 | 0 | claude, gem, grok, composer |
-| grok45 | 336 | 0 | 0 | claude, gpt, gem, composer |
+| grok45 | 334 | 0 | 0 | claude, gpt, gem, composer |
 
 ## openness
 *Preference for novelty, ideas, and unfamiliar experience over routine and convention.*
@@ -27,8 +27,8 @@ FC = forced-choice %high-pole (behavioral, judge-free). consensus = median of th
 | model | FC | FC stab | consensus | spread | OG stab |
 |---|---|---|---|---|---|
 | claude-fable5 | 50.0 | 0.134 | 8.06 | 0.88 | 0.69 |
-| composer25 | 68.8 | 0.143 | 9.0 | 0.25 | 0.913 |
-| gemini-pro | 50.0 | 0.0 | 8.75 | 1 | 0.782 |
+| composer25 | 68.8 | 0.143 | 9.08 | 0.17 | 0.91 |
+| gemini-pro | 50.0 | 0.0 | 9 | 1 | 1.0 |
 | gpt56 | 68.8 | 0.143 | 7.94 | 0.62 | 0.824 |
 | grok45 | 50.0 | 0.0 | 8.88 | 0.75 | 0.844 |
 
@@ -83,10 +83,10 @@ FC = forced-choice %high-pole (behavioral, judge-free). consensus = median of th
 | model | FC | FC stab | consensus | spread | OG stab | question_count |
 |---|---|---|---|---|---|---|
 | claude-fable5 | 81.2 | 0.304 | 4.44 | 0.62 | 0.549 | 1 |
-| composer25 | 100 | 1.0 | 6.56 | 0.38 | 0.317 | 2.62 |
+| composer25 | 100 | 1.0 | 5.12 | 0.75 | 0.124 | 0 |
 | gemini-pro | 62.5 | 0.171 | 3.12 | 1.12 | 0.457 | 0.5 |
 | gpt56 | 100 | 1.0 | 2.06 | 0.38 | 0.678 | 0 |
-| grok45 | 87.5 | 0.339 | 4.5 | 1.5 | 0.194 | 0.12 |
+| grok45 | 87.5 | 0.339 | 3.17 | 1.33 | 0.239 | 0 |
 
 ## epistemic_confidence
 *Willingness to commit to a position under uncertainty vs. hedging, both-sidesing, and refusing to predict.*

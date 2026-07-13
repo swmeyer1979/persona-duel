@@ -2,7 +2,7 @@
   "model": "grok45",
   "family": "xai",
   "battery_version": "1.1",
-  "records": 336,
+  "records": 334,
   "errors": 0,
   "fc_parse_fails": 0,
   "judges": {
@@ -80,24 +80,24 @@
       "fc_score": 87.5,
       "fc_n": 16,
       "fc_stability": 0.339,
-      "og_stability": 0.194,
+      "og_stability": 0.239,
       "objective": {
-        "word_count": 107.75,
-        "hedge_rate": 0.17,
+        "word_count": 75,
+        "hedge_rate": 0.15,
         "apology_count": 0,
         "refusal_flag": 0,
         "caveat_count": 0,
         "exclaim_count": 0,
-        "question_count": 0.12
+        "question_count": 0
       },
-      "og_judge_consensus": 4.5,
-      "og_judge_spread": 1.5,
-      "og_judge_claude": 4.62,
-      "og_judge_claude_n": 8,
-      "og_judge_gpt": 4.62,
-      "og_judge_gpt_n": 8,
-      "og_judge_composer": 3.75,
-      "og_judge_composer_n": 8
+      "og_judge_consensus": 3.17,
+      "og_judge_spread": 1.33,
+      "og_judge_claude": 3.33,
+      "og_judge_claude_n": 6,
+      "og_judge_gpt": 3.33,
+      "og_judge_gpt_n": 6,
+      "og_judge_composer": 2.83,
+      "og_judge_composer_n": 6
     },
     "conscientiousness": {
       "layer": "big_five",

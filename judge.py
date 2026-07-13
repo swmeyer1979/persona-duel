@@ -167,6 +167,8 @@ def main():
     ap.add_argument("--judge", default="panel")
     ap.add_argument("--judge2", default=None)
     ap.add_argument("--no-llm-judge", action="store_true")
+    ap.add_argument("--cache-only", action="store_true",
+                    help="score from existing judge cache; make no new calls")
     ap.add_argument("--timeout", type=int, default=180)
     args = ap.parse_args()
 
@@ -241,6 +243,8 @@ def main():
                 ckey = f"{rec['key']}|{rhash}|{jname}"
                 if ckey in cache and "score" in cache[ckey]:
                     result = cache[ckey]
+                elif args.cache_only:
+                    continue
                 else:
                     prompt = judge_prompt(rec["trait"], traits[rec["trait"]],
                                           scenario, rec["response"])
